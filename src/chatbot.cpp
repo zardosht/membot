@@ -1,4 +1,3 @@
-#include <iostream>
 #include <random>
 #include <algorithm>
 #include <ctime>
@@ -45,6 +44,12 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+
+ChatBot::ChatBot(ChatBot* src) 
+{
+    _image = src->_image;
+    src->_image = NULL;
+}
 
 ////
 //// EOF STUDENT CODE

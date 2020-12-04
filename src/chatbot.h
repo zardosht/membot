@@ -1,8 +1,10 @@
 #ifndef CHATBOT_H_
 #define CHATBOT_H_
 
-#include <wx/bitmap.h>
+#include <iostream>
 #include <string>
+
+#include <wx/bitmap.h>
 
 class GraphNode; // forward declaration
 class ChatLogic; // forward declaration
@@ -10,6 +12,7 @@ class ChatLogic; // forward declaration
 class ChatBot
 {
 private:
+
     // data handles (owned)
     wxBitmap *_image; // avatar image
 
@@ -29,6 +32,17 @@ public:
 
     //// STUDENT CODE
     ////
+
+    ChatBot(ChatBot*);  // copy construcutre 
+
+    // ChatBot* operator=(ChatBot* src) // copy assignment operator
+    // {
+    //     std::cout << "ChatBot copy assignment operator" << std::endl;
+    //     _image = src->_image;
+    //     src->_image = NULL;
+    //     return this;
+    // }
+
 
     ////
     //// EOF STUDENT CODE
