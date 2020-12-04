@@ -7,16 +7,15 @@ using std::endl;
 GraphNode::GraphNode(int id)
 {
     _id = id;
+    _chatBot = nullptr;
 }
 
 GraphNode::~GraphNode()
 {
     //// STUDENT CODE
     ////
-    
-    std::cout << "GraphNode Destructor" << std::endl;
 
-    delete _chatBot; 
+    // delete _chatBot; 
 
     ////
     //// EOF STUDENT CODE
@@ -42,10 +41,7 @@ void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
 void GraphNode::MoveChatbotHere(ChatBot *chatbot)
 {
     std::cout << "GraphNode.MoveChatbotHere(): chatbot: " << chatbot << std::endl; 
-
-    // _chatBot = chatbot;
-    _chatBot = new ChatBot(chatbot);
-
+    _chatBot = chatbot;
     _chatBot->SetCurrentNode(this);
 }
 

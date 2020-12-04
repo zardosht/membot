@@ -33,15 +33,6 @@ public:
     //// STUDENT CODE
     ////
 
-    ChatBot(ChatBot*);  // copy construcutre 
-
-    // ChatBot* operator=(ChatBot* src) // copy assignment operator
-    // {
-    //     std::cout << "ChatBot copy assignment operator" << std::endl;
-    //     _image = src->_image;
-    //     src->_image = NULL;
-    //     return this;
-    // }
 
 
     ////

@@ -37,6 +37,7 @@ ChatBot::~ChatBot()
     // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
+
         delete _image;
         _image = NULL;
     }
@@ -45,11 +46,6 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
-ChatBot::ChatBot(ChatBot* src) 
-{
-    _image = src->_image;
-    src->_image = NULL;
-}
 
 ////
 //// EOF STUDENT CODE
