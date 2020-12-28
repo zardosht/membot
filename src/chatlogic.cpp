@@ -175,7 +175,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             (*childNode)->AddEdgeToParentNode(edge.get());
                             
                             // (*parentNode)->AddEdgeToChildNode(edge);
-                            (*parentNode)->AddEdgeToChildNode(std::move(edge));
+                            (*parentNode)->AddEdgeToChildNode(edge);
                         }
 
                         ////
