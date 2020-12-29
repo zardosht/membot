@@ -7,7 +7,7 @@ using std::endl;
 GraphNode::GraphNode(int id)
 {
     _id = id;
-    _chatBot = nullptr;
+    // _chatBot = nullptr;
 }
 
 GraphNode::~GraphNode()
@@ -38,17 +38,17 @@ void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge>& edge)
 
 //// STUDENT CODE
 ////
-void GraphNode::MoveChatbotHere(ChatBot *chatbot)
+void GraphNode::MoveChatbotHere(ChatBot chatbot)
 {
-    std::cout << "GraphNode.MoveChatbotHere(): chatbot: " << chatbot << std::endl; 
-    _chatBot = chatbot;
-    _chatBot->SetCurrentNode(this);
+    std::cout << "GraphNode.MoveChatbotHere(): chatbot: " << &chatbot << std::endl; 
+    _chatBot = std::move(chatbot);
+    _chatBot.SetCurrentNode(this);
 }
 
 void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
-    newNode->MoveChatbotHere(_chatBot);
-    _chatBot = nullptr; // invalidate pointer at source
+    newNode->MoveChatbotHere(std::move(_chatBot));
+    // _chatBot = nullptr; // invalidate pointer at source
 }
 ////
 //// EOF STUDENT CODE

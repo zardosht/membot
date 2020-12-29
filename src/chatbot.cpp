@@ -58,7 +58,7 @@ ChatBot::ChatBot(const ChatBot& source)
     *_image = *source._image;
 }
 
-
+// copy assignment operator
 ChatBot& ChatBot::operator=(const ChatBot& source)
 {
     std::cout << "ChatBot Copy Assignment Operator" << std::endl;
@@ -81,6 +81,7 @@ ChatBot& ChatBot::operator=(const ChatBot& source)
 }
 
 
+// move constructor
 ChatBot::ChatBot(ChatBot&& source)
 {
     std::cout << "ChatBot Move Constructor" << std::endl;
@@ -100,6 +101,7 @@ ChatBot::ChatBot(ChatBot&& source)
 }
 
 
+// move assignment operator
 ChatBot& ChatBot::operator=(ChatBot&& source)
 {
     std::cout << "Move Assignment Operator" << std::endl;
