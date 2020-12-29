@@ -135,7 +135,7 @@ ChatBotPanelDialog::~ChatBotPanelDialog()
     //// STUDENT CODE
     ////
 
-    // not need to delete the handle to _chatlogic here anymore
+    // not needed to delete the handle to _chatlogic here anymore
     // unique_ptr takes care of it
 
     ////

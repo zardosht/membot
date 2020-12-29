@@ -17,7 +17,7 @@ ChatLogic::ChatLogic()
     //// STUDENT CODE
     ////
 
-    std::cout << "ChatLogic() constructor." << std::endl;
+    std::cout << "ChatLogic constructor." << std::endl;
 
     ////
     //// EOF STUDENT CODE
@@ -27,21 +27,6 @@ ChatLogic::~ChatLogic()
 {
     //// STUDENT CODE
     ////
-
-    // delete chatbot instance
-    // delete _chatBot;
-
-    // delete all nodes
-    // for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
-    // {
-    //     delete *it;
-    // }
-
-    // delete all edges
-    // for (auto it = std::begin(_edges); it != std::end(_edges); ++it)
-    // {
-    //     delete *it;
-    // }
 
     ////
     //// EOF STUDENT CODE
@@ -159,16 +144,12 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             std::unique_ptr<GraphEdge> edge = std::unique_ptr<GraphEdge>(new GraphEdge(id));
                             edge->SetChildNode((*childNode).get());
                             edge->SetParentNode((*parentNode).get());
-                            //_edges.push_back(edge);
 
                             // find all keywords for current node
                             AddAllTokensToElement("KEYWORD", tokens, *edge);
 
                             // store reference in child node and parent node
-                            // (*childNode)->AddEdgeToParentNode(edge);
                             (*childNode)->AddEdgeToParentNode(edge.get());
-                            
-                            // (*parentNode)->AddEdgeToChildNode(edge);
                             (*parentNode)->AddEdgeToChildNode(edge);
                         }
 
